@@ -1,3 +1,5 @@
+<img src="resources/go.svg" width=256 height=256 align="right"/>
+
 # go-timestamp
 
 Alfred workflow timestamp conversion
