@@ -8,11 +8,13 @@ import (
 )
 
 const (
+	ParserTypeNow       = "Now"
 	ParserTypeTime      = "Time"
 	ParserTypeTimestamp = "Timestamp"
 )
 
 var parserTypes = []string{
+	ParserTypeNow,
 	ParserTypeTime,
 	ParserTypeTimestamp,
 }
@@ -43,6 +45,7 @@ type ParserTime interface {
 func ParserFactory(str string) []ParserTime {
 	parsers := make([]ParserTime, 0)
 	parsers = append(parsers,
+		&Now{Str: str},
 		&Time{Str: str},
 		&Timestamp{Str: str})
 	return parsers

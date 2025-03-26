@@ -6,10 +6,10 @@ type FormatToString struct {
 	Time time.Time
 }
 
-func (t *FormatToString) Format() []string {
+func (c *FormatToString) Format() []string {
 	res := make([]string, 0, len(TimeLayouts))
 	for _, layout := range TimeLayouts {
-		timeStr := t.Time.Format(layout)
+		timeStr := c.Time.Format(layout)
 		res = append(res, timeStr)
 	}
 	return res

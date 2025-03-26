@@ -6,10 +6,10 @@ type DurationTime struct {
 	Str string
 }
 
-func (t *DurationTime) Parser() (time.Duration, error) {
-	duration, err := time.ParseDuration(t.Str)
+func (c *DurationTime) Parser() (time.Duration, error) {
+	duration, err := time.ParseDuration(c.Str)
 	if err != nil {
-		du, err := time.ParseDuration(t.Str + "ms")
+		du, err := time.ParseDuration(c.Str + "ms")
 		if err != nil {
 			return 0, err
 		}

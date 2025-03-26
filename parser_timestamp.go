@@ -23,13 +23,13 @@ type Timestamp struct {
 	Str string
 }
 
-func (t *Timestamp) Parser() (time.Time, error) {
-	timestampInt, err := strconv.Atoi(t.Str)
+func (c *Timestamp) Parser() (time.Time, error) {
+	timestampInt, err := strconv.Atoi(c.Str)
 	if err != nil {
 		return time.Now(), err
 	}
 	timestamp := int64(timestampInt)
-	switch len(t.Str) {
+	switch len(c.Str) {
 	case TimeStampLengthUnix:
 		return time.Unix(timestamp, 0), nil
 	case TimeStampLengthUnixMilli:

@@ -76,9 +76,6 @@ func Calculate(inputTime, addSub, duration string) {
 		return
 	}
 	du := DurationTime{Str: strings.TrimSpace(addSub) + duration}
-	if err != nil {
-		return
-	}
 	durationTime, err := du.Parser()
 	parserTime = parserTime.Add(durationTime)
 	OutPut(Format(parserType, parserTime))

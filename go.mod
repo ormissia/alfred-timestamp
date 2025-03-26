@@ -1,3 +1,3 @@
 module go-timestamp
 
-go 1.18
+go 1.21
